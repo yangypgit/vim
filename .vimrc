@@ -19,6 +19,7 @@ set cursorline           " 高亮显示当前行
 set cursorcolumn         " 高亮显示当前列
 set whichwrap+=<,>,h,l   " 设置光标键跨行
 set ttimeoutlen=0        " 设置<ESC>键响应时间
+set mouse-=a             " 设置不支持鼠标滚轮滚动
 set virtualedit=block,onemore   " 允许光标出现在最后一个字符的后面
 autocmd BufWritePost $MYVIMRC source $MYVIMRC " 让配置变更立即生效
 

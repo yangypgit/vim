@@ -36,7 +36,7 @@ function get_linux_platform_type()
 function is_ubuntu1604()
 {
     version=$(cat /etc/lsb-release | grep "DISTRIB_RELEASE")
-    echo ${version}
+    # echo ${version}
     if [ ${version} == "DISTRIB_RELEASE=16.04" ]; then
         echo 1
     elif [ ${version} == "DISTRIB_RELEASE=18.04" ]; then
@@ -164,10 +164,10 @@ function install_prepare_software_on_ubuntu()
     ubuntu_1604=`is_ubuntu1604`
     echo ${ubuntu_1604}
 
-    if [ ${ubuntu_1604} == 1 ]; then
+    if [ ${ubuntu_1604} -eq 1 ]; then
         echo "ubuntu 16.04 LTS"
         compile_vim_on_ubuntu
-    elif [ ${ubuntu_1604} == 2 ]; then
+    elif [ ${ubuntu_1604} -eq 2 ]; then
         echo "ubuntu 18.04 LTS"
         compile_vim_on_ubuntu_18
     else
@@ -259,7 +259,7 @@ function print_logo()
     echo ''
     echo ''
     echo 'Just enjoy it!'
-    echo 'p.s. Follow me at https://github.com/vim.'
+    echo 'p.s. Follow me at https://github.com/yangypgit/vim'
     echo ''
     printf "${normal}"
 }
