@@ -2,6 +2,4 @@
 
 ### ubuntu版本
 
-    ```
-    这是自己按照别人的配置稍微修改边学便用的 原链接是https://github.com/chxuan/vimplus.git 目前只改了ubuntu版本的
-    ```
+    这是自己按照别人的配置稍微修改边学便用的 原链接是<a herf="https://github.com/chxuan/vimplus" />目前只改了ubuntu版本的
