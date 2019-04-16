@@ -286,8 +286,8 @@ function begin_install_vimplus()
 # 在ubuntu发行版安装vimplus
 function install_vim_on_ubuntu()
 {
-    # install_prepare_software_on_ubuntu
-    # install_gtags
+    install_prepare_software_on_ubuntu
+    install_gtags
     begin_install_vimplus
 }
 
