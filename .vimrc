@@ -126,6 +126,7 @@ Plug 'tpope/vim-commentary'
 Plug 'Shougo/echodoc.vim'
 Plug 'terryma/vim-smooth-scroll'        " 让翻页更顺畅
 Plug 'scrooloose/nerdtree',             { 'on':'NERDTreeToggle'}
+Plug 'nathanaelkane/vim-indent-guides'  " 显示缩进级别
 call plug#end()            
 
 " load vim default plugin
