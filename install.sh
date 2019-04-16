@@ -46,7 +46,7 @@ function is_ubuntu1604()
     fi
 }
 
-# 在ubuntu上源代码安装vim
+# 移除旧的vim
 function remove_old_vim()
 {
     sudo apt-get remove -y vim vim-runtime gvim
@@ -89,21 +89,24 @@ function compile_vim_on_ubuntu_18()
     remove_old_vim
 
     sudo apt-get install -y libncurses5-dev libgnome2-dev libgnomeui-dev \
-        libgtk3.0-dev libatk1.0-dev libbonoboui2-dev \
-        libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev python3-dev ruby-dev lua5.1 lua5.1-dev
+        libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
+        libcairo2-dev libx11-dev libxpm-dev libxt-dev \
+        python-dev python3-dev ruby-dev lua5.1 liblua5.1-dev libperl-dev git
 
     git clone https://github.com/vim/vim.git ~/vim
     cd ~/vim
     ./configure --with-features=huge \
         --enable-multibyte \
-        --enable-rubyinterp \
-        --enable-pythoninterp \
-        --with-python-config-dir=/usr/lib/python2.7/config/ \
-        --enable-perlinterp \
-        --enable-luainterp \
-        --enable-gui=gtk3 \
+        --enable-rubyinterp=yes \
+        --enable-pythoninterp=yes \
+        --with-python-config-dir=/usr/lib/python2.7/config/ \ # 注意这里检查目录是否正确
+        --enable-python3interp=yes \
+        --with-python3-config-dir=/usr/lib/python3.6/config \ # 注意这里检查目录是否正确
+        --enable-perlinterp=yes \
+        --enable-gui=gtk2 \
         --enable-cscope \
         --prefix=/usr
+    # make VIMRUNTIMEDIR=/usr/local/share/vim/vim81
     make
     sudo make install
     cd -
@@ -283,8 +286,8 @@ function begin_install_vimplus()
 # 在ubuntu发行版安装vimplus
 function install_vim_on_ubuntu()
 {
-    install_prepare_software_on_ubuntu
-    install_gtags
+    # install_prepare_software_on_ubuntu
+    # install_gtags
     begin_install_vimplus
 }
 
