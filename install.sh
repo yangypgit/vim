@@ -295,6 +295,7 @@ function install_vim_on_ubuntu()
 function install_vimplus_on_centos()
 {
     install_prepare_software_on_centos
+    install_gtags
     begin_install_vimplus
 }
 
